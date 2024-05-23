@@ -1,0 +1,8 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+  set network.ZeroTier=interface
+  set network.ZeroTier.proto='none'
+  set network.ZeroTier.device='owzt9dd842'
+  commit network
+EOF

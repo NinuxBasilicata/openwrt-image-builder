@@ -1,0 +1,6 @@
+[ ifup = "$ACTION" ] || exit 0
+[ -n "$DEVICE" ] || exit 0
+
+if [ "$DEVICE" == wan ] ; then
+      ethtool --set-eee "$DEVICE" eee off
+fi

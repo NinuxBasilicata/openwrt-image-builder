@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if ! uci -q show dhcp.@dnsmasq[0].notinterface
+then
+    uci add_list dhcp.@dnsmasq[0].notinterface='pppoe-wan'
+    uci commit dhcp
+fi
+
+if ! uci -q show dhcp.@dnsmasq[0].server
+then
+    uci add_list dhcp.@dnsmasq[0].server='/nnxx/141.95.18.146'
+    uci add_list dhcp.@dnsmasq[0].server='/nnxx/51.178.46.85'
+    uci add_list dhcp.@dnsmasq[0].server='8.8.8.8'
+    uci add_list dhcp.@dnsmasq[0].server='2001:4860:4860::8888'
+    uci commit dhcp
+fi

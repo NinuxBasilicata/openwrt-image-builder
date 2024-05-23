@@ -1,0 +1,12 @@
+#!/bin/sh
+if which speedtest-netperf.sh >/dev/null; then
+
+    speedtest-netperf.sh -H netperf-eu.bufferbloat.net -p 1.1.1.1 --sequential
+
+else
+    opkg update
+    opkg install speedtest-netperf
+    sleep 2
+    speedtest-netperf.sh -H netperf-eu.bufferbloat.net -p 1.1.1.1 --sequential
+fi
+
