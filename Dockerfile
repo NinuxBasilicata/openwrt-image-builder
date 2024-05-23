@@ -6,9 +6,8 @@ ARG CPUS
 
 ## Install dependencies
 RUN apt-get update
-RUN apt-get install -y sudo build-essential clang flex g++ gawk gettext \
-      git libncurses5-dev libssl-dev python3-distutils rsync unzip zlib1g-dev \
-      file wget
+RUN apt-get install -y sudo build-essential clang flex g++ gawk gettext git \
+      libncurses5-dev libssl-dev python3-distutils rsync unzip zlib1g-dev file wget
 RUN apt-get clean
 
 # Add openwrt user
