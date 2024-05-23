@@ -18,7 +18,7 @@ env:
 jobs:
   OpenWRT-Image-Build:
     #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: jenkins
     permissions:
       contents: read
       packages: write
